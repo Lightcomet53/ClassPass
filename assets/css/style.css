@@ -804,6 +804,7 @@ header {
 .pickleball-description {
   font-family: "TT Norms", sans-serif;
   font-size: 16px;
+  margin: 0 auto;
   max-width: 604px;
   line-height: 24px;
   text-align: center;
