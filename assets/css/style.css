@@ -54,6 +54,9 @@ textarea {
 .full-width {
   width: 100% !important;
 }
+.gutter-bottom {
+  margin-bottom: 20px;
+}
 
 /* header */
 header {
