@@ -1,0 +1,1083 @@
+@font-face {
+  font-family: "TT Norms";
+  font-display: swap;
+  src: local("TT Norms"),
+    url("../font/TT_Norms/TTNorms-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circuit";
+  font-display: swap;
+  src: local("Circuit"), url("../font/Circuit/Circuit.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0055ff;
+  --secondary-color: #e6f3ff;
+  --text-color: #333;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --font-primary: "TT Norms", sans-serif;
+  --font-secondary: "Circuit", sans-serif;
+}
+
+/* header */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 100px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  flex-grow: 1;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  font-family: "TT Norms", sans-serif;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  margin-left: 10px;
+}
+
+.close-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  margin-left: 10px;
+}
+
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  border-radius: 0 0 8px 8px;
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-speed) ease;
+  pointer-events: none;
+}
+
+.mobile-dropdown.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-nav {
+  list-style: none;
+}
+
+.mobile-nav li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav li:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: #333;
+  font-family: "TT Norms", sans-serif;
+  font-weight: 500;
+  display: block;
+  transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+  color: #007bff;
+}
+
+.sign-up-button {
+  margin-left: 30px;
+  padding: 8px 24px !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1200px) {
+  header {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+  .menu-button {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    padding: 15px 20px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+/* main */
+
+/* ------------------------ hero section ------------------------ */
+.hero-section {
+  background: #e6f3ff;
+}
+.hero-section-container {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-content-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.hero-content {
+  max-width: 571px;
+}
+.hero-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+.hero-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
+.hero-buttons button {
+  padding: 8px 24px;
+}
+.hero-image-desktop {
+  width: 45%;
+}
+.hero-image-mobile {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 42px;
+    line-height: 46px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section-container {
+    flex-direction: column;
+  }
+  .hero-image-mobile {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .hero-image-desktop {
+    display: none;
+  }
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .hero-buttons button {
+    width: 100%;
+  }
+}
+
+/* ------------------------ banner section ------------------------ */
+.banner-section {
+  background-color: #c0e0ff;
+}
+
+.banner-container {
+  width: 100%;
+  height: 132px;
+  overflow-x: hidden;
+  padding: 40px 0;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.banner {
+  align-items: center;
+  gap: 82px;
+  animation: scroll 15s linear infinite;
+}
+
+.banner-item {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.banner-item img {
+  height: 60px;
+  width: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    animation: scroll 10s linear infinite;
+  }
+}
+
+/* ------------------------ what to expect section ------------------------ */
+.what-to-expect-section {
+  padding: 100px 20px;
+}
+
+.what-to-expect-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.what-to-expect-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.what-to-expect-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 60px;
+}
+
+.what-to-expect-content {
+  margin: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.what-to-expect-item {
+  width: 25%;
+  padding: 20px;
+  contain: layout style paint;
+}
+
+.what-to-expect-item-title {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 15px 0;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.what-to-expect-item-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.what-to-expect-item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .what-to-expect-section {
+    padding: 48px 20px;
+  }
+  .what-to-expect-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .what-to-expect-title {
+    text-align: left;
+  }
+  .what-to-expect-description {
+    text-align: left;
+  }
+  .what-to-expect-item {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* ------------------------ schedule section ------------------------ */
+.schedule-section {
+  padding: 100px 20px;
+  background-image: url("../images/Schedule_Background_Image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.schedule-container {
+  max-width: 604px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.schedule-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.schedule-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 40px;
+  contain: layout style paint;
+}
+
+.schedule-item-time {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.schedule-item-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.schedule-background-image {
+  display: none;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 0;
+  }
+  .schedule-container {
+    max-width: 100%;
+    border-radius: 0;
+    padding: 20px;
+  }
+  .schedule-background-image {
+    display: block;
+  }
+  .schedule-title {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .schedule-content {
+    text-align: left;
+  }
+}
+
+/* ------------------------ sponsor section ------------------------ */
+.sponsor-section {
+  padding: 100px 20px;
+  background: #F7F7F7;
+}
+
+.sponsor-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sponsor-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+.sponsor-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}
+.sponsor-tab-container {
+  width: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
+.sponsor-tab-buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.sponsor-tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: 0px 2px 10px 0px #00000014;
+}
+
+.sponsor-tab-button {
+  border: none;
+  font-family: "TT Norms", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  background-color: white;
+}
+
+.sponsor-tab-button.active {
+  background-color: #0055ff;
+  color: white;
+}
+
+.sponsor-tab-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  contain: layout style paint;
+}
+
+.sponsor-tab-pane {
+  display: none;
+}
+
+.sponsor-tab-pane.active {
+  display: block;
+}
+
+.sponsor-text-container {
+  width: 30%;
+  contain: layout style paint;
+}
+
+.sponsor-text-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.sponsor-text-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.sponsor-image {
+  width: 60%;
+  border-radius: 16px;
+}
+
+.sponsor-image-mobile {
+  display: none;
+  border-radius: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .sponsor-title {
+    text-align: left;
+  }
+  .sponsor-description {
+    text-align: left;
+  }
+  .sponsor-tab-buttons {
+    flex-wrap: wrap;
+    border-radius: 30px;
+  }
+  .sponsor-tab-button {
+    width: 100%;
+  }
+  .sponsor-tab-content {
+    flex-direction: column;
+  }
+  .sponsor-text-container {
+    width: 100%;
+  }
+
+  .sponsor-image-mobile {
+    display: block;
+  }
+  .sponsor-text-title {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 32px;
+  }
+  .sponsor-text-description {
+    text-align: left;
+  }
+  .sponsor-image {
+    display: none;
+  }
+}
+
+/* ------------------------ pickleball section ------------------------ */
+.pickleball-section {
+  padding: 100px 20px;
+  background-color: #e6f3ff;
+}
+
+.pickleball-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.pickleball-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.pickleball-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  max-width: 604px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 50px;
+}
+
+.pickleball-carousel-container {
+  max-width: 1440px;
+  margin: 40px auto;
+  position: relative;
+  padding: 0 40px;
+}
+
+.pickleball-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.pickleball-carousel-slide {
+  min-width: calc(100% / 3);
+  padding: 0 20px;
+  transition: min-width 0.3s ease;
+  contain: layout style paint;
+}
+
+.pickleball-carousel-item {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 2px 10px 0px #00000014;
+}
+
+/* Navigation Arrows */
+.pickleball-carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  width: 40px;
+  border: 1px solid #dedede;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px #00000014;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 999;
+  font-size: 28px;
+}
+
+.pickleball-carousel-button:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pickleball-carousel-button.prev {
+  left: 0;
+}
+
+.pickleball-carousel-button.next {
+  right: 0;
+}
+
+/* Dot Navigation */
+.pickleball-carousel-dots {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pickleball-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pickleball-carousel-dot.active {
+  background: #333;
+}
+
+.pickleball-carousel-wrapper {
+  overflow: hidden;
+}
+
+.pickleball-carousel-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.pickleball-carousel-item-title {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+.pickleball-carousel-item-source {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+.pickleball-carousel-item-link {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+}
+
+@media (max-width: 1024px) {
+  .pickleball-carousel-slide {
+    min-width: calc(100% / 2);
+  }
+  .pickleball-carousel-container {
+    padding: 0 30px;
+  }
+  .pickleball-description {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pickleball-title {
+    text-align: left;
+  }
+  .pickleball-description {
+    text-align: left;
+  }
+  .pickleball-carousel-slide {
+    min-width: 100%;
+    padding: 0;
+  }
+  .pickleball-carousel-container {
+    padding: 0;
+  }
+  .pickleball-carousel-button {
+    display: none;
+  }
+}
+
+/* ------------------------ footer section ------------------------ */
+footer {
+  padding: 100px 20px;
+  background-color: black;
+}
+.footer-container {
+  max-width: 604px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: white;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+.footer-description {
+  font-family: "TT Norms", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+}
+
+/* ------------------------ signup section ------------------------ */
+.signup-section {
+  padding: 100px 20px;
+  background-color: #e6f3ff;
+}
+
+.signup-container {
+  max-width: 1014px;
+  margin: 0 auto;
+}
+
+.signup-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.signup-description {
+  font-family: "TT Norms", sans-serif;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 604px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.signup-content {
+  display: flex;
+  gap: 100px;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 20px;
+  background-color: white;
+  width: 50%;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px 0px #00000014;
+}
+.signup-form-title {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.signup-form-description {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.input-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signup-image-container {
+  width: 50%;
+  background-image: url(../images/signup_image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px 0px #00000014;
+  display: block;
+}
+.signup-image {
+  display: none;
+}
+.checkbox-description {
+  font-family: "TT Norms", sans-serif;
+  font-weight: 400;
+  color: #6a6a6a;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.signup-container .checkmark {
+  width: 24px;
+}
+.join-waitlist-button {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .signup-section {
+    padding: 60px 20px;
+  }
+  .signup-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-section {
+    padding: 40px 20px;
+  }
+  .signup-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .signup-form-container {
+    width: 100%;
+  }
+  .signup-image-container {
+    display: none;
+  }
+  .signup-image {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+  }
+}
+
+/* ------------------------ thank you section ------------------------ */
+.thank-you-section {
+  padding: 100px 20px;
+  min-height: calc(100vh - 66px);
+  background-color: #e6f3ff;
+}
+
+.thank-you-container {
+  max-width: 1014px;
+  margin: 0 auto;
+}
+
+.thank-you-title {
+  font-family: "Circuit", sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.thank-you-description {
+  font-family: "TT Norms", sans-serif;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 604px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Use modern CSS features */
+@supports (aspect-ratio: 16/9) {
+  .hero-image-desktop,
+  .hero-image-mobile {
+    object-fit: cover;
+  }
+}
+
+/* Use CSS containment for layout performance */
+.what-to-expect-item,
+.schedule-item,
+.sponsor-tab-content,
+.pickleball-carousel-slide {
+  contain: layout style paint;
+}
