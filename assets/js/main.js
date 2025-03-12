@@ -177,7 +177,6 @@ if (DOM.pickleballTrack && DOM.pickleballSlides.length) {
 
 // --------------- Navigation with performance optimization ---------------
 const navigateTo = (path, classname) => {
-  console.log(classname);
     const button = document.querySelector(classname);
     if (button) {
         button.addEventListener("click", () => {
