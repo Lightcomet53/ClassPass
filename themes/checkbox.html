@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUI-Style Checkboxes</title>
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <style>
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Checkbox</h1>
+    <div class="checkbox-container">
+        <!-- Default Checkbox -->
+        <label class="checkbox-field">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Default Checkbox</span>
+        </label>
+
+        <!-- Checked Checkbox -->
+        <label class="checkbox-field">
+            <input type="checkbox" checked>
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Checked Checkbox</span>
+        </label>
+
+        <!-- Indeterminate Checkbox -->
+        <label class="checkbox-field">
+            <input type="checkbox" id="indeterminate">
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Indeterminate</span>
+        </label>
+
+        <!-- Disabled Checkbox -->
+        <label class="checkbox-field">
+            <input type="checkbox" disabled>
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Disabled Checkbox</span>
+        </label>
+
+        <!-- Disabled Checked Checkbox -->
+        <label class="checkbox-field">
+            <input type="checkbox" disabled checked>
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Disabled Checked</span>
+        </label>
+
+        <!-- Error Checkbox -->
+        <label class="checkbox-field error">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Error Checkbox</span>
+            <div class="helper-text">Error message</div>
+        </label>
+
+    </div>
+
+    <script src="../assets/js/component.js"></script>
+</body>
+</html> 

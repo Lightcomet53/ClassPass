@@ -13,8 +13,18 @@
   border: none;
 }
 .filled-button:hover {
-  background: #0044cc;
+  background: #008aff;
   cursor: pointer;
+}
+.filled-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.nav-button {
+  margin-left: 30px;
+  padding: 8px 24px !important;
+  box-shadow: none !important;
 }
 .outlined-button:hover {
   background: #f3f7ff;
@@ -34,439 +44,436 @@
   color: #0055ff;
 }
 
+
 /* ------------------------ select ------------------------ */
-.input-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+.select-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .form-field {
-    position: relative;
-    width: 200px;
-    margin-bottom: 20px;
-    width: 100%;
+  position: relative;
+  width: 200px;
 }
 
 .form-field label {
-    position: absolute;
-    left: 12px;
-    top: 0;
-    transform: translateY(-50%);
-    font-family: TTNorms, sans-serif;
-    font-size: 12px;
-    color: #666;
-    pointer-events: none;
-    transition: 0.2s ease all;
-    background: white;
-    padding: 0 4px;
+  position: absolute;
+  left: 12px;
+  top: 0;
+  transform: translateY(-50%);
+  font-family: TTNorms, sans-serif;
+  font-size: 12px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: white;
+  padding: 0 4px;
 }
 
 .form-field .select-wrapper,
 .form-field input {
-    width: 100%;
-    height: 45px;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    font-family: TTNorms, sans-serif;
-    background: white;
-    color: #333;
-    transition: 0.2s ease all;
+  width: 100%;
+  height: 45px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-family: TTNorms, sans-serif;
+  background: white;
+  color: #333;
+  transition: 0.2s ease all;
 }
 
 /* Select specific styles */
 .select-wrapper {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
 }
 
 .select-wrapper.open {
-    border-color: #1976d2;
+  border-color: #1976d2;
 }
 
 .selected-value {
-    position: relative;
-    padding: 4px 24px 4px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    height: 100%;
-    display: flex;
-    align-items: center;
+  position: relative;
+  padding: 4px 24px 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .arrow {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #666;
-    transition: 0.2s ease all;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #666;
+  transition: 0.2s ease all;
 }
 
 .select-wrapper.open .arrow {
-    transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .options-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 4px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-    display: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .options-list.show {
-    display: block;
+  display: block;
 }
 
 .option {
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: 0.2s ease all;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.2s ease all;
 }
 
 .option:hover {
-    background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 /* Active states */
 .form-field input:focus,
 .select-wrapper.open {
-    border-color: #1976d2;
-    box-shadow: 0 0 0 1px #1976d2;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 1px #1976d2;
 }
 
 .form-field input:focus + label,
 .form-field.has-value label,
 .select-wrapper.open + label {
-    top: 0;
-    font-size: 12px;
-    color: #1976d2;
+  top: 0;
+  font-size: 12px;
+  color: #1976d2;
 }
 
 /* Error state */
 .form-field.error input,
 .form-field.error .select-wrapper {
-    border-color: #d32f2f;
+  border-color: #d32f2f;
 }
 
 .form-field.error label {
-    color: #d32f2f;
+  color: #d32f2f;
 }
 
 /* Disabled state */
 .form-field.disabled input,
 .form-field.disabled .select-wrapper {
-    background: #f5f5f5;
-    cursor: not-allowed;
+  background: #f5f5f5;
+  cursor: not-allowed;
 }
 
 /* ------------------------ text-field ------------------------ */
 .text-field {
-    position: relative;
-    width: 280px;
-    margin-bottom: 20px;
-    width: 100%;
+  position: relative;
+  width: 280px;
 }
 
 .text-field label {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #666;
-    pointer-events: none;
-    transition: 0.2s ease all;
-    background: white;
-    font-family: TTNorms, sans-serif;
-    padding: 0 4px;
-    margin-left: -4px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: white;
+  font-family: TTNorms, sans-serif;
+  padding: 0 4px;
+  margin-left: -4px;
 }
 
 .text-field input {
-    width: 100%;
-    height:45px;
-    font-family: TTNorms, sans-serif;
-    padding: 16px 14px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    background: white;
-    color: #333;
-    transition: 0.2s ease all;
+  width: 100%;
+  height: 45px;
+  font-family: TTNorms, sans-serif;
+  padding: 16px 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background: white;
+  color: #333;
+  transition: 0.2s ease all;
 }
 
 /* Helper text */
 .helper-text {
-    margin-top: 4px;
-    font-size: 12px;
-    color: #666;
-    margin-left: 14px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+  margin-left: 14px;
 }
 
 /* Focused state */
 .text-field.focused input {
-    border-color: #1976d2;
-    border-width: 2px;
-    padding: 15px 13px; /* Compensate for border width */
+  border-color: #1976d2;
+  border-width: 2px;
+  padding: 15px 13px; /* Compensate for border width */
 }
 
 .text-field.focused label {
-    color: #1976d2;
-    top: 0;
-    font-size: 12px;
+  color: #1976d2;
+  top: 0;
+  font-size: 12px;
 }
 
 /* Has value state */
 .text-field.has-value label {
-    top: 0;
-    font-size: 12px;
+  top: 0;
+  font-size: 12px;
 }
 
 /* Error state */
 .text-field.error input {
-    border-color: #d32f2f;
+  border-color: #d32f2f;
 }
 
 .text-field.error label {
-    color: #d32f2f;
+  color: #d32f2f;
 }
 
-.text-field.error .helper-text {
-    color: #d32f2f;
+.helper-error {
+  color: #d32f2f!important;
 }
 
 /* Disabled state */
 .text-field.disabled input {
-    background: #f5f5f5;
-    border-style: dotted;
-    cursor: not-allowed;
-    color: #666;
+  background: #f5f5f5;
+  border-style: dotted;
+  cursor: not-allowed;
+  color: #666;
 }
 
 .text-field.disabled label {
-    color: #999;
+  color: #999;
 }
 
 /* Required state */
 .text-field.required label::after {
-    content: " *";
-    color: #d32f2f;
+  content: " *";
+  color: #d32f2f;
 }
 
 /* Hover state */
 .text-field:not(.disabled):not(.focused):hover input {
-    border-color: #333;
+  border-color: #333;
 }
 
 /* Success state */
 .text-field.success input {
-    border-color: #2e7d32;
+  border-color: #2e7d32;
 }
 
 .text-field.success label {
-    color: #2e7d32;
+  color: #2e7d32;
 }
 
-.text-field.success .helper-text {
-    color: #2e7d32;
+.helper-success {
+  color: #2e7d32!important;
 }
 
 /* Start adornment */
 .text-field.with-start-adornment input {
-    padding-left: 36px;
+  padding-left: 36px;
 }
 
 .start-adornment {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-    font-size: 16px;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 16px;
 }
 
 /* End adornment */
 .text-field.with-end-adornment input {
-    padding-right: 36px;
+  padding-right: 36px;
 }
 
 .end-adornment {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-    font-size: 16px;
-    cursor: pointer;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* ------------------------ checkbox ------------------------ */
 .checkbox-container {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Base Checkbox Styles */
 .checkbox-field {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    cursor: pointer;
-    user-select: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Hide default checkbox */
 .checkbox-field input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 /* Custom checkbox */
 .checkmark {
-    position: relative;
-    height: 18px;
-    width: 18px;
-    background-color: #fff;
-    border: 2px solid #757575;
-    border-radius: 2px;
-    transition: all 0.2s ease;
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #757575;
+  border-radius: 2px;
+  transition: all 0.2s ease;
 }
 
 /* Label styles */
 .checkbox-label {
-    padding-left: 12px;
-    font-size: 12px;
-    color: #333;
-    font-family: TT Norms, sans-serif;
+  padding-left: 12px;
+  font-size: 12px;
+  color: #333;
+  font-family: TT Norms, sans-serif;
 }
 
 /* Helper text */
 .helper-text {
-    margin-left: 30px;
-    font-size: 12px;
-    color: #666;
-    margin-top: 2px;
+  margin-left: 30px;
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
 }
 
 /* Hover state */
 .checkbox-field:hover input:not(:disabled) ~ .checkmark {
-    border-color: #1976d2;
-    /* background-color: rgba(25, 118, 210, 0.04); */
+  border-color: #1976d2;
+  /* background-color: rgba(25, 118, 210, 0.04); */
 }
 
 /* Checked state */
 .checkbox-field input:checked ~ .checkmark {
-    background-color: #1976d2;
-    border-color: #1976d2;
+  background-color: #1976d2;
+  border-color: #1976d2;
 }
 
 /* Checkmark/indicator */
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 5px;
-    top: 1px;
-    width: 4px;
-    height: 9px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    transition: all 0.2s ease;
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: all 0.2s ease;
 }
 
 .checkbox-field input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 /* Indeterminate state */
 .checkbox-field input:indeterminate ~ .checkmark {
-    background-color: #1976d2;
-    border-color: #1976d2;
+  background-color: #1976d2;
+  border-color: #1976d2;
 }
 
 .checkbox-field input:indeterminate ~ .checkmark:after {
-    display: block;
-    transform: none;
-    border: 0;
-    width: 8px;
-    height: 2px;
-    background: white;
-    left: 3px;
-    top: 6px;
+  display: block;
+  transform: none;
+  border: 0;
+  width: 8px;
+  height: 2px;
+  background: white;
+  left: 3px;
+  top: 6px;
 }
 
 /* Disabled state */
 .checkbox-field input:disabled ~ .checkmark {
-    border-color: #bdbdbd;
-    background-color: #e0e0e0;
-    cursor: not-allowed;
+  border-color: #bdbdbd;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
 }
 
 .checkbox-field input:disabled ~ .checkbox-label {
-    color: #757575;
-    cursor: not-allowed;
+  color: #757575;
+  cursor: not-allowed;
 }
 
 /* Error state */
 .checkbox-field.error .checkmark {
-    border-color: #d32f2f;
+  border-color: #d32f2f;
 }
 
 .checkbox-field.error .checkbox-label {
-    color: #d32f2f;
+  color: #d32f2f;
 }
 
 .checkbox-field.error .helper-text {
-    color: #d32f2f;
+  color: #d32f2f;
 }
 
 /* Focus state */
 .checkbox-field input:focus ~ .checkmark {
-    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.2);
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.2);
 }
 
 /* Group styles */
 .checkbox-group {
-    border: 1px solid #ddd;
-    padding: 16px;
-    border-radius: 4px;
-    background: white;
-    margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 4px;
+  background: white;
+  margin-bottom: 20px;
 }
 
 .checkbox-group-label {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 12px;
-    display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+  display: block;
 }

@@ -48,6 +48,14 @@ if (DOM.menuButton && DOM.mobileDropdown && DOM.closeButton) {
     // });
 
     DOM.mobileDropdown.addEventListener("click", (e) => e.stopPropagation());
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+            DOM.menuButton.style.display = "none";
+        } else {
+            DOM.menuButton.style.display = "block";
+        }
+    });
 }
 
 // --------------- Sponsor tab ---------------

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUI-Style Inputs</title>
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="title">Select</h1>
+    <div class="input-container">
+        <!-- Custom Select -->
+        <div class="form-field">
+            <div class="select-wrapper" tabindex="0">
+                <div class="selected-value">Please select</div>
+                <div class="arrow"></div>
+                <div class="options-list">
+                    <div class="option" data-value="novice">Novice</div>
+                    <div class="option" data-value="beginner">Beginner</div>
+                    <div class="option" data-value="intermediate">Intermediate</div>
+                    <div class="option" data-value="advanced">Advanced</div>
+                </div>
+            </div>
+            <label>Pickleball experience level?</label>
+        </div>
+
+       
+    </div>
+
+    <script src="../assets/js/component.js"></script>
+</body>
+</html> 

@@ -34,6 +34,10 @@
   --font-secondary: "Circuit", sans-serif;
 }
 
+.full-width {
+  width: 100%!important;
+}
+
 /* header */
 header {
   background-color: #ffffff;
@@ -69,6 +73,7 @@ header {
 
 .nav-links a {
   text-decoration: none;
+  white-space: nowrap;
   font-size: 14px;
   color: #333;
   font-family: "TT Norms", sans-serif;
@@ -150,12 +155,6 @@ header {
   color: #007bff;
 }
 
-.sign-up-button {
-  margin-left: 30px;
-  padding: 8px 24px !important;
-  box-shadow: none !important;
-}
-
 @media (max-width: 1200px) {
   header {
     padding: 15px 20px;
@@ -210,10 +209,12 @@ header {
 /* ------------------------ hero section ------------------------ */
 .hero-section {
   background: #e6f3ff;
+  padding-left: 20px;
 }
 .hero-section-container {
   margin: 0 auto;
   display: flex;
+  max-width: 1440px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -222,8 +223,7 @@ header {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding-right: 20px;
 }
 .hero-content {
   max-width: 571px;
@@ -957,13 +957,6 @@ footer {
   line-height: 24px;
   letter-spacing: 0px;
   vertical-align: middle;
-}
-.input-container {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .signup-image-container {
