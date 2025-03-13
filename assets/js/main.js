@@ -325,3 +325,61 @@ window.requestIdleCallback
       navigateTo("/index.html", ".logo, .logo-mobile");
       navigateTo("/thank-you.html", ".join-waitlist-button");
     })();
+
+// Banner scroll functionality
+function initBannerScroll() {
+  const banners = document.querySelectorAll('.banner');
+  let positions = [-100, 0]; // Starting positions for the two banners
+  let speed = window.innerWidth <= 768 ? 1 : 0.5; // Faster on mobile
+  let isPaused = false;
+
+  // Calculate total width of a banner including gap
+  function getBannerWidth(banner) {
+    const items = banner.querySelectorAll('.banner-item');
+    let totalWidth = 0;
+    items.forEach(item => {
+      totalWidth += item.offsetWidth + 50; // 50px is the gap
+    });
+    return totalWidth;
+  }
+
+  function animate() {
+    if (!isPaused) {
+      positions = positions.map(pos => {
+        // Move banner to the left
+        pos -= speed;
+        
+        // If banner has moved completely off screen to the left
+        if (pos <= -100) {
+          pos = 100; // Move it to the right side
+        }
+        
+        return pos;
+      });
+
+      // Apply positions to banners
+      banners.forEach((banner, index) => {
+        banner.style.transform = `translate3d(${positions[index]}%, -50%, 0)`;
+      });
+    }
+    requestAnimationFrame(animate);
+  }
+
+  // Start animation
+  animate();
+
+  // Pause on hover
+  const container = document.querySelector('.banner-container');
+  container.addEventListener('mouseenter', () => isPaused = true);
+  container.addEventListener('mouseleave', () => isPaused = false);
+
+  // Update speed on resize
+  window.addEventListener('resize', () => {
+    speed = window.innerWidth <= 768 ? 1 : 0.5;
+  });
+}
+
+// Initialize banner scroll when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initBannerScroll();
+});

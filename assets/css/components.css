@@ -360,12 +360,16 @@
 /* Custom checkbox */
 .checkmark {
   position: relative;
-  height: 18px;
-  width: 18px;
   background-color: #fff;
   border: 2px solid #757575;
   border-radius: 2px;
   transition: all 0.2s ease;
+  width: 18px;
+  height: 18px;
+}
+.checkmark div {
+  width: 18px;
+  height: 18px;
 }
 
 /* Label styles */
