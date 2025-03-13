@@ -712,6 +712,7 @@ header {
 
 .sponsor-text-container {
   width: 30%;
+  display: block!important;
 }
 
 .sponsor-text-title {
