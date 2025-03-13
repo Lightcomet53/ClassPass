@@ -710,7 +710,7 @@ header {
   justify-content: space-between;
 }
 
-.sponsor-text-container {
+.sponsor-info-container {
   width: 30%;
   display: block!important;
 }
@@ -775,7 +775,7 @@ header {
   .sponsor-tab-content {
     flex-direction: column;
   }
-  .sponsor-text-container {
+  .sponsor-info-container {
     width: 100%;
   }
 
