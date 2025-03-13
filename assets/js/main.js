@@ -370,8 +370,10 @@ function initBannerScroll() {
 
   // Pause on hover
   const container = document.querySelector('.banner-container');
-  container.addEventListener('mouseenter', () => isPaused = true);
-  container.addEventListener('mouseleave', () => isPaused = false);
+  if (container) {
+    container.addEventListener('mouseenter', () => isPaused = true);
+    container.addEventListener('mouseleave', () => isPaused = false);
+  }
 
   // Update speed on resize
   window.addEventListener('resize', () => {
