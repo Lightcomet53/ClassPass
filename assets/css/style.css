@@ -350,7 +350,7 @@ header {
   display: flex;
   gap: 0;
   align-items: center;
-  animation: scrollBanner 10s linear infinite;
+  animation: scrollBanner 20s linear infinite;
   width: max-content; /* Ensures seamless wrapping */
 }
 
@@ -378,7 +378,9 @@ header {
     height: 100px;
     padding: 20px 0;
   }
-
+  .banner-item {
+    margin-right: 50px;
+  }
   .banner-item img {
     height: 40px;
   }
@@ -710,7 +712,7 @@ header {
   justify-content: space-between;
 }
 
-.sponsor-info-container {
+.sponsor-text-container {
   width: 30%;
   display: block!important;
 }
@@ -775,7 +777,7 @@ header {
   .sponsor-tab-content {
     flex-direction: column;
   }
-  .sponsor-info-container {
+  .sponsor-text-container {
     width: 100%;
   }
 
